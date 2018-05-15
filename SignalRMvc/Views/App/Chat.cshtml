@@ -1,0 +1,40 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h2>Chat-room</h2>
+
+    <div class="main">
+        <div id="loginBlock">
+            Enter Login:<br />
+            <input id="txtUserName" type="text" />
+            <input id="btnLogin" type="button" value="Login" />
+        </div>
+        <div id="chatBody">
+            <div id="header"></div>
+            <div id="inputForm">
+                <input type="text" id="message" />
+                <input type="button" id="sendmessage" value="Send" />
+            </div>
+            <div id="chatroom"></div>
+
+            <div id="chatusers">
+                <p><b>All Users</b></p>
+            </div>
+        </div>
+        <input id="hdId" type="hidden" />
+        <input id="username" type="hidden" />
+    </div>
+
+    @Scripts.Render("~/Scripts/jquery-1.10.2.min.js")
+    @Scripts.Render("~/Scripts/jquery.signalR-2.2.3.min.js")
+
+    @Scripts.Render("~/signalr/hubs")
+    @Scripts.Render("~/Scripts/app-chat.js")
+</body>
+</html>
