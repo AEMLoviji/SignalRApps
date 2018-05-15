@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNet.SignalR;
-using SignalRMvc.Models;
+using SignalRApps.Models;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SignalRMvc.Hubs
+namespace SignalRApps.Hubs
 {
     public class ChatHub : Hub
     {

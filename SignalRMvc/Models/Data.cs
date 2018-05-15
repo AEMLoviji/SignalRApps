@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace SignalRDraw.Models
+namespace SignalRApps.Models
 {
     public class Data
     {

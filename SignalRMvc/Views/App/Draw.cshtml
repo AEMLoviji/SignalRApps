@@ -1,25 +1,22 @@
 ﻿@{
-    Layout = null;
+    ViewBag.Title = "Draw App";
 }
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <title></title>
-    <style>
-        canvas {
-            position: relative;
-            background-color: #dbf9ff;
-        }
-    </style>
 
-</head>
-<body>
-    <canvas id='drawingpad' width='800' height='800'></canvas>
+<style>
+    canvas#drawingpad {
+        position: relative;
+        background-color: #dbf9ff;
+    }
+</style>
 
-    @Scripts.Render("~/Scripts/jquery-1.10.2.min.js")
+<h2>@ViewBag.Title</h2>
+
+<div class="form-horizontal">
+    <canvas id='drawingpad' width='1200' height='600'></canvas>
+</div>
+
+@section scripts{
     @Scripts.Render("~/Scripts/jquery.signalR-2.2.3.min.js")
-
     @Scripts.Render("~/signalr/hubs")
     @Scripts.Render("~/Scripts/app-draw.js")
-</body>
-</html>
+}

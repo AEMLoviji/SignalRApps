@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace SignalRMvc
+namespace SignalRApps
 {
     public class RouteConfig
     {
@@ -16,7 +16,7 @@ namespace SignalRMvc
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Signal", action = "Chat", id = UrlParameter.Optional }
+                defaults: new { controller = "App", action = "Chat", id = UrlParameter.Optional }
             );
         }
     }

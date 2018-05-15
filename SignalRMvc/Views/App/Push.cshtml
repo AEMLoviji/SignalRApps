@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SignalRApps.Models.Book>
+
+@{
+    ViewBag.Title = "Push App";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Ajax.ActionLink("Add New Book", "AddBook", null)
+</p>
+
+<p>
+    <span id="notification" style="color:blue;font-size:16px;"></span>
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+        </tr>
+    }
+</table>
+
+@section scripts{
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+    @Scripts.Render("~/Scripts/jquery.signalR-2.2.3.min.js")
+    @Scripts.Render("~/signalr/hubs")
+    @Scripts.Render("~/Scripts/app-push.js")
+}

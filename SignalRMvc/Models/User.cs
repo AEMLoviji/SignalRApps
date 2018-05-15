@@ -1,4 +1,4 @@
-﻿namespace SignalRMvc.Models
+﻿namespace SignalRApps.Models
 {
     public class User
     {

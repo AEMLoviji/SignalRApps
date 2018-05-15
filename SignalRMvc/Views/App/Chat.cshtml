@@ -1,40 +1,61 @@
 ﻿@{
-    Layout = null;
+    ViewBag.Title = "Chat App";
 }
-<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-    <h2>Chat-room</h2>
 
-    <div class="main">
-        <div id="loginBlock">
-            Enter Login:<br />
-            <input id="txtUserName" type="text" />
-            <input id="btnLogin" type="button" value="Login" />
-        </div>
-        <div id="chatBody">
-            <div id="header"></div>
-            <div id="inputForm">
-                <input type="text" id="message" />
-                <input type="button" id="sendmessage" value="Send" />
+<h2>@ViewBag.Title</h2>
+
+<div class="form-horizontal">
+
+    <div id="loginBlock">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-md-2">Enter Login:</label>
+                <div class="col-md-10">
+                    <input id="txtUserName" type="text" class="form-control" />
+                </div>
             </div>
-            <div id="chatroom"></div>
 
-            <div id="chatusers">
-                <p><b>All Users</b></p>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input id="btnLogin" type="button" value="Login" class="btn btn-default" />
+                </div>
             </div>
         </div>
-        <input id="hdId" type="hidden" />
-        <input id="username" type="hidden" />
     </div>
 
-    @Scripts.Render("~/Scripts/jquery-1.10.2.min.js")
-    @Scripts.Render("~/Scripts/jquery.signalR-2.2.3.min.js")
 
+    <div id="chatBody">
+        <h3 id="greeting"></h3>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-md-2">Enter Message:</label>
+                <div class="col-md-10">
+                    <input id="message" type="text" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input id="sendmessage" type="button" value="Send" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+
+        <hr />
+        <div id="chatroom"></div>
+
+        <hr />
+        <div id="chatusers">
+            <p><b>All Users</b></p>
+        </div>
+    </div>
+
+    <input id="hdId" type="hidden" />
+    <input id="username" type="hidden" />
+</div>
+
+@section scripts{
+    @Scripts.Render("~/Scripts/jquery.signalR-2.2.3.min.js")
     @Scripts.Render("~/signalr/hubs")
     @Scripts.Render("~/Scripts/app-chat.js")
-</body>
-</html>
+}

@@ -7,11 +7,8 @@ using SignalRApps.Models;
 
 namespace SignalRApps
 {
-    public class DrawHub : Hub
+    public class PushHub : Hub
     {
-        public void Send(Data data)
-        {
-            Clients.AllExcept(Context.ConnectionId).addLine(data);
-        }
+
     }
 }

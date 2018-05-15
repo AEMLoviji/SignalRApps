@@ -8,8 +8,8 @@ $(function () {
 
     //Function will be raised when new message received
     chat.client.addMessage = function (name, message) {
-        $('#chatroom').append('<p><b>' + htmlEncode(name)
-            + '</b>: ' + htmlEncode(message) + '</p>');
+        $('#chatroom').append('<p><i>' + htmlEncode(name)
+            + '</i>: ' + htmlEncode(message) + '</p>');
     };
 
     // Function will be called on new user connection
@@ -20,7 +20,7 @@ $(function () {
 
         $('#hdId').val(id);
         $('#username').val(userName);
-        $('#header').html('<h3>Welcome, ' + userName + '</h3>');
+        $('#greeting').html('<h4>Welcome, ' + userName + '</h4>');
 
         // Adding all users
         for (i = 0; i < allUsers.length; i++) {
@@ -76,6 +76,6 @@ function AddUser(id, name) {
 
     if (userId != id) {
 
-        $("#chatusers").append('<p id="' + id + '"><b>' + name + '</b></p>');
+        $("#chatusers").append('<p id="' + id + '"><i>' + name + '</i></p>');
     }
 }
